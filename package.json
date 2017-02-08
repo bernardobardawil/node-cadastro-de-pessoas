@@ -1,0 +1,17 @@
+{
+  "name": "cadastro-pessoas",
+  "version": "0.1.0",
+  "description": "Simples cadastro de pessoas para estudo sobre Node.js",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "João Rigotti",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "consign": "^0.1.2",
+    "express": "^4.14.0"
+  }
+}
