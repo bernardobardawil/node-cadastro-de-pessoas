@@ -4,3 +4,5 @@ const app = require('./config/express'),
 app.listen(porta, () => {
   console.log(`Servidor executando na porta: ${porta}`);
 });
+
+module.exports = app;
