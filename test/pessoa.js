@@ -7,7 +7,7 @@ chai.use(chaiHttp);
 
 describe('API pessoa:', () => {
 
-  describe('GET pessoa/', () => {
+  describe('GET pessoas/', () => {
     it('deve retornar sucesso com zero ou mais itens em um array', done => {
 
       chai.request(server)
@@ -15,7 +15,7 @@ describe('API pessoa:', () => {
         .end((err, res) => {
           res.should.have.status(200);
           res.body.should.be.a('object');
-          res.body.should.have.property('type').eql('success');
+          res.body.should.have.property('type').equal('success');
           res.body.should.have.property('data').be.a('array');
           res.body.data.should.have.length.at.least(0);
           done();
@@ -24,7 +24,7 @@ describe('API pessoa:', () => {
     });
   });
 
-  describe('POST pessoa/', () => {
+  describe('POST pessoas/', () => {
     it('deve retornar sucesso e uma mensagem quando inserir corretamente uma pessoa', done => {
 
       const pessoa = {
@@ -42,7 +42,7 @@ describe('API pessoa:', () => {
         .end((err, res) => {
           res.should.have.status(200);
           res.body.should.be.a('object');
-          res.body.should.have.property('type').eql('success');
+          res.body.should.have.property('type').equal('success');
           res.body.should.have.property('message');
           done();
       });
@@ -50,7 +50,7 @@ describe('API pessoa:', () => {
     });
   });
 
-  describe('PUT pessoa/:id', () => {
+  describe('PUT pessoas/:id', () => {
     const pessoa = {
       nome: 'João R. Rigotti',
     };
@@ -63,7 +63,7 @@ describe('API pessoa:', () => {
         .end((err, res) => {
           res.should.have.status(200);
           res.body.should.be.a('object');
-          res.body.should.have.property('type').eql('success');
+          res.body.should.have.property('type').equal('success');
           res.body.should.have.property('message');
           done();
       });
@@ -78,7 +78,7 @@ describe('API pessoa:', () => {
         .end((err, res) => {
           res.should.have.status(422);
           res.body.should.be.a('object');
-          res.body.should.have.property('type').eql('error');
+          res.body.should.have.property('type').equal('error');
           res.body.should.have.property('message');
           done();
       });
@@ -86,7 +86,7 @@ describe('API pessoa:', () => {
     });
   });
 
-  describe('DELETE pessoa/:id', () => {
+  describe('DELETE pessoas/:id', () => {
     it('deve retornar sucesso e uma mensagem quando excluir corretamente uma pessoa', done => {
 
       chai.request(server)
@@ -94,7 +94,7 @@ describe('API pessoa:', () => {
         .end((err, res) => {
           res.should.have.status(200);
           res.body.should.be.a('object');
-          res.body.should.have.property('type').eql('success');
+          res.body.should.have.property('type').equal('success');
           res.body.should.have.property('message');
           done();
       });
@@ -108,7 +108,7 @@ describe('API pessoa:', () => {
         .end((err, res) => {
           res.should.have.status(422);
           res.body.should.be.a('object');
-          res.body.should.have.property('type').eql('error');
+          res.body.should.have.property('type').equal('error');
           res.body.should.have.property('message');
           done();
       });
